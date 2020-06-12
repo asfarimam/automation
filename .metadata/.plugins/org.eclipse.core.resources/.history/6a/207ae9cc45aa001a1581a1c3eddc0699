@@ -1,0 +1,29 @@
+package newpakage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class youtube {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\OrAnGe\\Downloads\\Programs\\chromedriver_win32\\chromedriver.exe");
+
+		 WebDriver driver = new ChromeDriver();
+		 driver.manage().window().maximize();
+		  
+		 String url = "https://www.google.com/";
+		 driver.get(url);
+		 driver.findElement(By.name("q")).sendKeys("twitter"); 
+		 driver.findElement(By.name("btnK")).submit();
+	     driver.findElement(By.cssSelector("#rso > div:nth-child(1) > div > table > tbody > tr.mslg.dmenKe > td:nth-child(1) > div > span > h3 > a")).click();
+	     driver.getCurrentUrl();
+	    
+		 driver.findElement(By.name("session[username_or_email]")).sendKeys("asfarimam96@hotmail.com");
+		 driver.findElement(By.name("session[password]")).sendKeys("asfar96");
+		 driver.findElement(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > form > div > div:nth-child(8) > div > div")).submit(); 
+		 driver.getCurrentUrl();
+		 
+		 driver.findElement(By.className("#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > header > div > div > div > div.css-1dbjc4n.r-1awozwy.r-15d164r.r-1x0uki6 > div > div > div > div.css-1dbjc4n.r-1twgtwe.r-sdzlij.r-rs99b7.r-1p0dtai.r-1mi75qu.r-1d2f490.r-1ny4l3l.r-u8s1d.r-zchlnj.r-ipm5af")).click();
+		 driver.findElement(By.className("#react-root > div > div > div.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c > div.css-1dbjc4n.r-1d2f490.r-105ug2t.r-u8s1d.r-zchlnj.r-ipm5af > div.css-1dbjc4n.r-aqfbo4.r-1xcajam > div > div:nth-child(2) > div > div > div > div > div > a:nth-child(4) > div > div > span > span")).click();
+	}} 

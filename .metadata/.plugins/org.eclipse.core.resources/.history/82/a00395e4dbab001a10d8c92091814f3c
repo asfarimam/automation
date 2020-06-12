@@ -1,0 +1,50 @@
+package newpakage;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MyClass {
+
+	public static void main(String[] args) {
+	
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\OrAnGe\\Downloads\\Programs\\chromedriver_win32\\chromedriver.exe");
+
+		  WebDriver driver = new ChromeDriver();
+		  driver.manage().window().maximize();
+		  
+		  driver.navigate().to("https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin");
+		 driver.findElement(By.cssSelector("#username")).sendKeys("asfarimam96@hotmail.com");
+		driver.findElement(By.cssSelector("#password")).sendKeys("");
+		driver.findElement(By.cssSelector("#app__container > main > div:nth-child(2) > form > div.login__form_action_container > button")).submit();
+
+		driver.getCurrentUrl(); 
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		//driver.navigate().refresh();
+		//navigate to profile
+		driver.findElement(By.cssSelector("#ember23 > div > span")).click();
+		driver.findElement(By.cssSelector("#ember26 > div.nav-settings__linkcard.nav-settings__block > span")).click();
+		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+      //message
+		driver.findElement(By.cssSelector("#messaging-nav-item > a > span.nav-item__title")).click();
+		driver.getCurrentUrl();
+
+		//my network
+		driver.findElement(By.id("mynetwork-tab-icon")).click();
+		driver.getCurrentUrl();
+		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+		
+		//driver.findElement(By.cssSelector("")).click();
+		//driver.getCurrentUrl();
+		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+	 //logout
+		driver.findElement(By.cssSelector("#ember23 > div > span")).click();
+		driver.findElement(By.id("ember38")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.close();
+	}
+
+}
